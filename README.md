@@ -26,17 +26,22 @@ A responsive static awareness website for **InAmigos Foundation**, showcasing th
 - **Deployment**: Vercel
 
 ---
+## Content Sources
 
-## Getting Started
+All organizational details — founding date, founder, registration status (Section 8, 
+80G, 12A, CSR-1, NITI Aayog, ISO 9001:2015), project descriptions, and impact figures — 
+were sourced directly from:
+- Official website: inamigosfoundation.org.in
+- Instagram: instagram.com/inamigos
+- Facebook: facebook.com/inamigos.inamigos
 
-To run the project locally:
+## Flagship Projects Covered
 
-```bash
-# Clone the repository
-git clone https://github.com/ShortEditor/InAmigos-foundation-.git
-
-# Navigate into the project folder
-cd InAmigos-foundation-
-
-# Open index.html in your browser
-```
+| Project | Focus Area |
+|---|---|
+| SEVA | Food & clothing distribution |
+| Bachpanshala | Education for underprivileged children |
+| Prakriti | Environmental conservation & plantation |
+| Jeev | Animal welfare |
+| Udaan | Women's empowerment |
+| Vikas | Youth skilling & internships |
