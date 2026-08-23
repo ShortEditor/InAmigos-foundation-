@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InAmigos Foundation — Uniting Minds for Change</title>
+  <meta name="description"
+    content="InAmigos Foundation is a Section 8 registered non-profit based in Bilaspur, Chhattisgarh, driving social impact across India through education, animal welfare, women empowerment, and environmental conservation." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "cream-base": "#fdfbf7",
+            "forest-deep": "#052e23",
+            "clay-accent": "#a45c40",
+            "primary": "#003527",
+            "primary-container": "#064e3b",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#80bea6",
+            "secondary": "#4e635c",
+            "secondary-container": "#d0e8de",
+            "on-secondary-container": "#546961",
+            "surface": "#fbf9f5",
+            "surface-container": "#efeeea",
+            "surface-container-low": "#f5f3ef",
+            "surface-variant": "#e4e2de",
+            "on-surface": "#1b1c1a",
+            "on-surface-variant": "#404944",
+            "outline": "#707974",
+            "outline-variant": "#bfc9c3",
+            "tertiary-container": "#6f331a",
+            "on-tertiary-container": "#f29c7c",
+            "secondary-fixed": "#d0e8de",
+          },
+          fontFamily: {
+            serif: ["Playfair Display", "Georgia", "serif"],
+            sans: ["Hanken Grotesk", "system-ui", "sans-serif"],
+          },
+          spacing: {
+            gutter: "32px",
+            section: "120px",
+            edge: "clamp(24px, 5vw, 64px)",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+
+    .ambient-shadow {
+      box-shadow: 0 20px 40px -10px rgba(5, 46, 35, 0.08);
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body
+  class="bg-cream-base text-on-surface font-sans overflow-x-hidden selection:bg-clay-accent selection:text-cream-base">
+
+  <!-- ======================== NAVIGATION ======================== -->
+  <nav class="fixed top-0 w-full z-50 bg-cream-base/85 backdrop-blur-md" id="top">
+    <div class="flex justify-between items-center max-w-7xl mx-auto px-edge py-4">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="https://inamigosfoundation.org.in/public/storage/settings/174421468011.jpg" alt="InAmigos Foundation"
+          class="h-10 w-auto max-w-[200px] object-contain" style="mix-blend-mode: multiply;" />
+      </a>
+
+      <div class="hidden md:flex gap-8 items-center" id="desktop-nav">
+        <a href="#about" data-nav="about" class="nav-link text-secondary hover:text-clay-accent transition-colors">Our
+          Story</a>
+        <a href="#projects" data-nav="projects"
+          class="nav-link text-secondary hover:text-clay-accent transition-colors">Programs</a>
+        <a href="#impact" data-nav="impact"
+          class="nav-link text-secondary hover:text-clay-accent transition-colors">Impact</a>
+        <a href="#contact" data-nav="contact"
+          class="nav-link text-secondary hover:text-clay-accent transition-colors">Contact</a>
+      </div>
+
+      <a href="https://rzp.io/l/kWQ87HP" target="_blank" rel="noopener noreferrer"
+        class="hidden md:inline-flex bg-forest-deep text-cream-base px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-clay-accent transition-colors duration-300">
+        Donate Now
+      </a>
+
+      <button class="md:hidden text-forest-deep" id="mobile-menu-btn" aria-label="Open menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+
+    <!-- Mobile overlay & panel -->
+    <div class="mobile-overlay fixed inset-0 bg-black/30 z-40" id="mobile-overlay"></div>
+    <div class="mobile-panel fixed top-0 right-0 w-72 h-full bg-cream-base z-50 flex flex-col px-8 pt-6"
+      id="mobile-panel">
+      <button class="self-end text-forest-deep mb-10" id="mobile-close-btn" aria-label="Close menu">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+      <a href="#top"
+        class="text-lg text-forest-deep font-serif font-semibold py-3 border-b border-outline-variant/30">Home</a>
+      <a href="#about" class="text-lg text-secondary py-3 border-b border-outline-variant/30 hover:text-clay-accent">Our
+        Story</a>
+      <a href="#projects"
+        class="text-lg text-secondary py-3 border-b border-outline-variant/30 hover:text-clay-accent">Programs</a>
+      <a href="#impact"
+        class="text-lg text-secondary py-3 border-b border-outline-variant/30 hover:text-clay-accent">Impact</a>
+      <a href="#contact"
+        class="text-lg text-secondary py-3 border-b border-outline-variant/30 hover:text-clay-accent">Contact</a>
+      <a href="https://rzp.io/l/kWQ87HP" target="_blank" rel="noopener noreferrer"
+        class="mt-8 bg-forest-deep text-cream-base px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-widest text-center hover:bg-clay-accent transition-colors">
+        Donate Now
+      </a>
+    </div>
+  </nav>
+
+  <!-- ======================== HERO ======================== -->
+  <header class="relative pt-28 pb-20 lg:pt-36 lg:pb-section px-edge min-h-[90vh] flex items-center" id="home">
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+      <!-- Text -->
+      <div class="md:col-span-7 z-10 md:pr-8">
+        <span class="text-xs font-semibold uppercase tracking-[0.15em] text-clay-accent mb-6 block">
+          InAmigos Foundation &nbsp;·&nbsp; Est. 2020
+        </span>
+
+        <h1
+          class="font-serif text-[40px] leading-[48px] md:text-[64px] md:leading-[72px] text-forest-deep font-bold mb-8">
+          Uniting Minds <br />
+          <span class="italic font-normal text-clay-accent">for</span> Change.
+        </h1>
+
+        <p class="text-xl leading-8 text-on-surface-variant mb-10 max-w-lg">
+          Empowering communities across 28 states through education,
+          environment conservation, women empowerment, and compassionate service.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="https://forms.gle/AB4c1hLaDDmtrKGU7" target="_blank" rel="noopener noreferrer"
+            class="btn-fill bg-clay-accent text-cream-base px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest inline-flex items-center gap-2">
+            Volunteer With Us
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+          <a href="https://rzp.io/l/kWQ87HP" target="_blank" rel="noopener noreferrer"
+            class="btn-outline-fill border-2 border-forest-deep text-forest-deep px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest">
+            Donate Now
+          </a>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="md:col-span-5 relative mt-12 md:mt-0 h-[400px] md:h-[600px] w-full">
+        <div class="absolute inset-0 organic-shape overflow-hidden shadow-2xl">
+          <img src="https://inamigosfoundation.org.in/public/storage/slideshow/1738236132.jpg"
+            alt="InAmigos Foundation volunteers serving communities" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-forest-deep/10 mix-blend-overlay"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================== ABOUT ======================== -->
+    <section class="py-20 lg:py-section px-edge bg-surface relative overflow-hidden reveal" id="about">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Image -->
+        <div class="relative h-[360px] lg:h-[480px] rounded-2xl overflow-hidden ambient-shadow">
+          <img src="https://inamigosfoundation.org.in/public/storage/settings/1738236437.jpg"
+            alt="InAmigos Foundation team at work" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- Text -->
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-[0.15em] text-clay-accent mb-4 block">Our Story</span>
+          <h2
+            class="font-serif text-[32px] leading-[40px] md:text-[48px] md:leading-[56px] text-forest-deep font-semibold mb-6">
+            Our Narrative
+          </h2>
+          <p class="text-lg leading-8 text-on-surface-variant mb-6">
+            InAmigos Foundation was founded on <strong class="text-on-surface">September 23, 2020</strong>, by
+            <strong class="text-on-surface">Govind Shukla</strong> (Founder &amp; CEO). A Section 8 registered
+            non-profit licensed by the Central Government, headquartered in Bilaspur, Chhattisgarh,
+            with operations spanning across India.
+          </p>
+          <p class="text-base leading-7 text-on-surface-variant mb-8">
+            We operate at the intersection of education, environment, and social welfare —
+            weaving enduring stories of resilience through six flagship projects that drive
+            lasting, measurable change.
+          </p>
+
+          <!-- Founder -->
+          <div class="flex items-center gap-4 p-4 bg-cream-base rounded-xl border-l-4 border-clay-accent mb-8">
+            <img
+              src="https://media.licdn.com/dms/image/v2/D4D03AQFhsh8nOshwNw/profile-displayphoto-shrink_200_200/B4DZW9inw7HYAc-/0/1742641725894?e=1788998400&v=beta&t=xAOVY98rCyBR9BktJTWCd3a-y0RfajqtasOPXV4S7To"
+              alt="Govind Shukla" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <div class="font-semibold text-forest-deep">Govind Shukla</div>
+              <div class="text-sm text-secondary">Founder &amp; CEO</div>
+            </div>
+          </div>
+
+          <!-- Credentials -->
+          <div class="flex flex-wrap gap-8 pt-6 border-t border-surface-variant/50">
+            <div class="text-center">
+              <span
+                class="text-xs font-semibold uppercase tracking-widest text-clay-accent block mb-1">Registered</span>
+              <span class="font-serif text-2xl font-semibold text-forest-deep">80G</span>
+            </div>
+            <div class="text-center">
+              <span class="text-xs font-semibold uppercase tracking-widest text-clay-accent block mb-1">Certified</span>
+              <span class="font-serif text-2xl font-semibold text-forest-deep">12A</span>
+            </div>
+            <div class="text-center">
+              <span class="text-xs font-semibold uppercase tracking-widest text-clay-accent block mb-1">Compliant</span>
+              <span class="font-serif text-2xl font-semibold text-forest-deep">CSR-1</span>
+            </div>
+            <div class="text-center">
+              <span class="text-xs font-semibold uppercase tracking-widest text-clay-accent block mb-1">Aligned</span>
+              <span class="font-serif text-2xl font-semibold text-forest-deep">NITI</span>
+            </div>
+            <div class="text-center">
+              <span class="text-xs font-semibold uppercase tracking-widest text-clay-accent block mb-1">Quality</span>
+              <span class="font-serif text-2xl font-semibold text-forest-deep">ISO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== PROJECTS ======================== -->
+    <section class="py-20 lg:py-section px-edge bg-cream-base" id="projects">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-20 md:w-2/3">
+          <span class="text-xs font-semibold uppercase tracking-[0.15em] text-clay-accent mb-4 block">Initiatives</span>
+          <h2 class="font-serif text-[40px] leading-[48px] md:text-[64px] md:leading-[72px] text-forest-deep font-bold">
+            Chapters of <br />Impact.
+          </h2>
+        </div>
+
+        <div class="space-y-28">
+
+          <!-- Story 1: SEVA -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center relative story-group" id="project-seva">
+            <div class="md:col-span-7 h-[400px] md:h-[500px] relative rounded-2xl overflow-hidden ambient-shadow">
+              <img src="https://inamigosfoundation.org.in/public/storage/slideshow/1738236132.jpg"
+                alt="Project SEVA — Serving Humanity with Compassion" class="w-full h-full object-cover story-img" />
+              <div class="absolute inset-0 bg-forest-deep/15"></div>
+            </div>
+            <div
+              class="md:col-span-5 ml-0 md:-ml-16 bg-cream-base p-8 md:p-14 z-10 rounded-xl ambient-shadow story-card">
+              <h3 class="font-serif text-[36px] leading-tight text-forest-deep mb-4">SEVA</h3>
+              <p class="text-base text-secondary mb-4">
+                Serving humanity with dignity. Providing food and clothing to the underprivileged — ensuring no one goes
+                hungry or unclothed.
+              </p>
+              <span class="text-sm text-clay-accent font-semibold">50,000+ meals &amp; items distributed</span>
+            </div>
+          </div>
+
+          <!-- Story 2: Bachpanshala (Reversed) -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center relative story-group"
+            id="project-bachpanshala">
+            <div
+              class="md:col-span-5 md:order-1 order-2 mr-0 md:-mr-16 bg-cream-base p-8 md:p-14 z-10 rounded-xl ambient-shadow md:text-right story-card story-card-right">
+              <h3 class="font-serif text-[36px] leading-tight text-forest-deep mb-4">Bachpanshala</h3>
+              <p class="text-base text-secondary mb-4">
+                Nurturing young minds, building bright futures. Quality education for underprivileged children — digital
+                literacy, life skills, and school support.
+              </p>
+              <span class="text-sm text-clay-accent font-semibold">Digital literacy &amp; life skills training</span>
+            </div>
+            <div
+              class="md:col-span-7 md:order-2 order-1 h-[400px] md:h-[500px] relative rounded-2xl overflow-hidden ambient-shadow">
+              <img src="https://inamigosfoundation.org.in/public/storage/slideshow/1738235951.jpg"
+                alt="Project Bachpanshala — Nurturing Young Minds" class="w-full h-full object-cover story-img" />
+              <div class="absolute inset-0 bg-clay-accent/10"></div>
+            </div>
+          </div>
+
+          <!-- Story 3: Prakriti -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center relative story-group"
+            id="project-prakriti">
+            <div class="md:col-span-7 h-[400px] md:h-[500px] relative rounded-2xl overflow-hidden ambient-shadow">
+              <img src="https://inamigosfoundation.org.in/public/storage/slideshow/1738236201.jpg"
+                alt="Project Prakriti — Plant for a Better Tomorrow" class="w-full h-full object-cover story-img" />
+              <div class="absolute inset-0 bg-forest-deep/10"></div>
+            </div>
+            <div
+              class="md:col-span-5 ml-0 md:-ml-16 bg-cream-base p-8 md:p-14 z-10 rounded-xl ambient-shadow story-card">
+              <h3 class="font-serif text-[36px] leading-tight text-forest-deep mb-4">Prakriti</h3>
+              <p class="text-base text-secondary mb-4">
+                Restoring the ecological balance. Massive plantation drives and eco-friendly agriculture support for a
+                sustainable future.
+              </p>
+              <span class="text-sm text-clay-accent font-semibold">20,000+ saplings planted</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Remaining 3 projects — compact grid -->
+        <div class="mt-28 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <div class="card-tilt" id="project-jeev">
+            <div class="h-64 rounded-2xl overflow-hidden ambient-shadow mb-6">
+              <img src="https://inamigosfoundation.org.in/public/storage/slideshow/1738235697.jpg"
+                alt="Project Jeev — Animal Welfare" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="font-serif text-2xl text-forest-deep mb-2">Jeev</h3>
+            <p class="text-sm text-secondary mb-2">Animal welfare — rescue, protection, and daily feeding through a
+              dedicated volunteer network.</p>
+            <span class="text-xs text-clay-accent font-semibold uppercase tracking-wider">50+ strays fed daily</span>
+          </div>
+
+          <div class="card-tilt" id="project-udaan">
+            <div class="h-64 rounded-2xl overflow-hidden ambient-shadow mb-6">
+              <img src="https://inamigosfoundation.org.in/public/storage/slideshow/1738235638.jpg"
+                alt="Project Udaan — Women Empowerment" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="font-serif text-2xl text-forest-deep mb-2">Udaan</h3>
+            <p class="text-sm text-secondary mb-2">Women empowerment through rural self-help groups — financial
+              independence and skill development.</p>
+            <span class="text-xs text-clay-accent font-semibold uppercase tracking-wider">Rural SHG partnerships</span>
+          </div>
+
+          <div class="card-tilt" id="project-vikas">
+            <div class="h-64 rounded-2xl overflow-hidden ambient-shadow mb-6">
+              <img src="https://inamigosfoundation.org.in/public/storage/gallery/1743051485.jpg"
+                alt="Project Vikas — Skill Development" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="font-serif text-2xl text-forest-deep mb-2">Vikas</h3>
+            <p class="text-sm text-secondary mb-2">Employability and skill development across data ops, finance,
+              research, content, and marketing.</p>
+            <span class="text-xs text-clay-accent font-semibold uppercase tracking-wider">30,000+ interns trained</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== IMPACT ======================== -->
+    <section class="py-20 lg:py-section px-edge bg-forest-deep text-cream-base relative overflow-hidden reveal"
+      id="impact">
+      <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div>
+          <h2 class="font-serif text-[40px] leading-[48px] md:text-[64px] md:leading-[72px] font-bold mb-8">
+            Measurable<br />Empathy.
+          </h2>
+          <p class="text-xl leading-8 text-secondary-container/80 mb-10">
+            Numbers only tell part of the story, but they signify the scale of our collective effort.
+            Each digit represents a life touched, a meal served, or a future reshaped.
+          </p>
+          <a href="https://inamigosfoundation.org.in/page/About-Us" target="_blank" rel="noopener noreferrer"
+            class="border border-cream-base/30 text-cream-base px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-cream-base hover:text-forest-deep transition-colors duration-300 inline-block">
+            Learn More About Us
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 gap-10">
+          <div class="border-l-2 border-clay-accent/40 pl-6 stat-item">
+            <span class="block font-serif text-[48px] leading-tight text-clay-accent mb-1 stat-number">50K+</span>
+            <span class="text-xs font-semibold uppercase tracking-widest text-secondary-container">Lives Touched</span>
+          </div>
+          <div class="border-l-2 border-clay-accent/40 pl-6 stat-item">
+            <span class="block font-serif text-[48px] leading-tight text-clay-accent mb-1 stat-number">28</span>
+            <span class="text-xs font-semibold uppercase tracking-widest text-secondary-container">States Reached</span>
+          </div>
+          <div class="border-l-2 border-clay-accent/40 pl-6 stat-item">
+            <span class="block font-serif text-[48px] leading-tight text-clay-accent mb-1 stat-number">30K+</span>
+            <span class="text-xs font-semibold uppercase tracking-widest text-secondary-container">Interns
+              Trained</span>
+          </div>
+          <div class="border-l-2 border-clay-accent/40 pl-6 stat-item">
+            <span class="block font-serif text-[48px] leading-tight text-clay-accent mb-1 stat-number">20K+</span>
+            <span class="text-xs font-semibold uppercase tracking-widest text-secondary-container">Saplings
+              Planted</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative rings -->
+      <div
+        class="absolute -bottom-1/2 -right-1/4 w-[800px] h-[800px] rounded-full border border-secondary-container/10">
+      </div>
+      <div
+        class="absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] rounded-full border border-secondary-container/15">
+      </div>
+    </section>
+
+    <!-- ======================== JOIN CTA ======================== -->
+    <section class="py-20 lg:py-section px-edge bg-surface" id="join">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="text-xs font-semibold uppercase tracking-[0.15em] text-clay-accent mb-4 block">Get Involved</span>
+        <h2
+          class="font-serif text-[32px] leading-[40px] md:text-[48px] md:leading-[56px] text-forest-deep font-semibold mb-6">
+          Join the Movement
+        </h2>
+        <p class="text-lg leading-8 text-on-surface-variant mb-10 max-w-xl mx-auto">
+          Whether you volunteer your time, share your skills, or contribute resources —
+          every action creates a ripple of change.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="https://forms.gle/AB4c1hLaDDmtrKGU7" target="_blank" rel="noopener noreferrer"
+            class="btn-fill bg-clay-accent text-cream-base px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest"
+            id="cta-volunteer">
+            Become a Volunteer
+          </a>
+          <a href="https://rzp.io/l/kWQ87HP" target="_blank" rel="noopener noreferrer"
+            class="btn-outline-fill border-2 border-forest-deep text-forest-deep px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest"
+            id="cta-donate">
+            Donate Now
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="bg-forest-deep text-cream-base" id="contact">
+    <div class="max-w-7xl mx-auto px-edge py-16 lg:py-section">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-gutter">
+
+        <!-- Brand -->
+        <div>
+          <div class="font-serif text-3xl font-semibold text-cream-base mb-4">InAmigos</div>
+          <p class="text-secondary-fixed/70 max-w-xs leading-relaxed mb-6 text-sm">
+            A Section 8 registered non-profit empowering communities across India through education,
+            welfare, and sustainable development since 2020.
+          </p>
+          <div class="flex gap-3">
+            <a href="https://www.instagram.com/inamigos/" target="_blank" rel="noopener noreferrer"
+              class="social-link w-9 h-9 rounded-full border border-cream-base/20 flex items-center justify-center hover:bg-clay-accent hover:border-clay-accent"
+              aria-label="Instagram">
+              <span class="material-symbols-outlined text-base">photo_camera</span>
+            </a>
+            <a href="https://www.facebook.com/inamigos.inamigos" target="_blank" rel="noopener noreferrer"
+              class="social-link w-9 h-9 rounded-full border border-cream-base/20 flex items-center justify-center hover:bg-clay-accent hover:border-clay-accent"
+              aria-label="Facebook">
+              <span class="material-symbols-outlined text-base">thumb_up</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="grid grid-cols-2 gap-8">
+          <div class="flex flex-col space-y-3">
+            <span class="text-xs font-semibold uppercase tracking-widest text-clay-accent mb-1">Explore</span>
+            <a href="#about" class="footer-link text-secondary-fixed/70 text-sm">Our Story</a>
+            <a href="#projects" class="text-secondary-fixed/70 hover:text-white transition-colors text-sm">Programs</a>
+            <a href="#impact" class="text-secondary-fixed/70 hover:text-white transition-colors text-sm">Impact</a>
+            <a href="#join" class="text-secondary-fixed/70 hover:text-white transition-colors text-sm">Get Involved</a>
+          </div>
+          <div class="flex flex-col space-y-3">
+            <span class="text-xs font-semibold uppercase tracking-widest text-clay-accent mb-1">Projects</span>
+            <a href="#project-seva" class="text-secondary-fixed/70 hover:text-white transition-colors text-sm">SEVA</a>
+            <a href="#project-bachpanshala"
+              class="text-secondary-fixed/70 hover:text-white transition-colors text-sm">Bachpanshala</a>
+            <a href="#project-prakriti"
+              class="text-secondary-fixed/70 hover:text-white transition-colors text-sm">Prakriti</a>
+            <a href="#project-jeev" class="text-secondary-fixed/70 hover:text-white transition-colors text-sm">Jeev</a>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-widest text-clay-accent mb-3 block">Contact Us</span>
+          <div class="space-y-3 text-sm text-secondary-fixed/70">
+            <p>Ward No. 5, Gram Post, Sipat Ujwal Nagar,<br />Bilaspur, Chhattisgarh — 495555</p>
+            <p>
+              <a href="mailto:inamigosfoundation@gmail.com"
+                class="hover:text-white transition-colors">inamigosfoundation@gmail.com</a>
+            </p>
+            <p>
+              <a href="tel:+916267309902" class="hover:text-white transition-colors">+91 626 730 9902</a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div
+      class="border-t border-cream-base/10 py-6 px-edge max-w-7xl mx-auto text-center text-xs text-secondary-fixed/40">
+      © 2026 InAmigos Foundation. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- ======================== SCRIPTS ======================== -->
+  <script>
+    // Mobile nav
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('mobile-close-btn');
+    const overlay = document.getElementById('mobile-overlay');
+    const panel = document.getElementById('mobile-panel');
+
+    function openNav() { overlay.classList.add('active'); panel.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeNav() { overlay.classList.remove('active'); panel.classList.remove('active'); document.body.style.overflow = ''; }
+
+    menuBtn.addEventListener('click', openNav);
+    closeBtn.addEventListener('click', closeNav);
+    overlay.addEventListener('click', closeNav);
+    panel.querySelectorAll('a[href^="#"]').forEach(l => l.addEventListener('click', closeNav));
+
+    // Scroll-spy
+    (function () {
+      const navLinks = document.querySelectorAll('#desktop-nav .nav-link');
+      const ACTIVE = 'text-clay-accent';
+      const INACTIVE = 'text-secondary';
+
+      function setActive(id) {
+        navLinks.forEach(link => {
+          if (link.getAttribute('data-nav') === id) {
+            link.classList.remove(INACTIVE);
+            link.classList.add(ACTIVE);
+          } else {
+            link.classList.remove(ACTIVE);
+            link.classList.add(INACTIVE);
+          }
+        });
+      }
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            const id = e.target.id;
+            if (['about', 'projects', 'impact', 'contact'].includes(id)) setActive(id);
+          }
+        });
+      }, { rootMargin: '-20% 0px -60% 0px' });
+
+      document.querySelectorAll('#about, #projects, #impact, #contact').forEach(el => observer.observe(el));
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY < 200) {
+          navLinks.forEach(l => { l.classList.remove(ACTIVE); l.classList.add(INACTIVE); });
+        }
+      }, { passive: true });
+    })();
+    // Scroll-reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => revealObs.observe(el));
+  </script>
+
+</body>
+
+</html>

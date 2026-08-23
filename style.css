@@ -1,0 +1,254 @@
+/* ============================================
+   InAmigos Foundation — Custom Interactions
+   ============================================ */
+
+/* --- Nav Link: underline draws from center --- */
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #a45c40;
+  transition: width 0.35s ease, left 0.35s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* --- Buttons: diagonal wipe fill --- */
+.btn-fill {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+.btn-fill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 0;
+  height: 100%;
+  background: #052e23;
+  transform: skewX(-12deg);
+  transition: width 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: -1;
+}
+
+.btn-fill:hover::before {
+  width: 130%;
+}
+
+.btn-outline-fill {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+.btn-outline-fill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 0;
+  height: 100%;
+  background: #052e23;
+  transform: skewX(-12deg);
+  transition: width 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: -1;
+}
+
+.btn-outline-fill:hover::before {
+  width: 130%;
+}
+
+.btn-outline-fill:hover {
+  color: #fdfbf7;
+  border-color: #052e23;
+}
+
+/* --- Project story images: slow Ken Burns drift + color reveal --- */
+.story-img {
+  filter: grayscale(30%) brightness(0.95);
+  transition: filter 1s ease, transform 8s ease;
+  transform: scale(1.02);
+}
+
+.story-group:hover .story-img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.06) translateX(-8px);
+}
+
+/* --- Story text card: subtle float up + accent line grows --- */
+.story-card {
+  transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1), box-shadow 0.5s ease;
+  position: relative;
+}
+
+.story-card::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: #a45c40;
+  border-radius: 2px;
+  transition: height 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.story-group:hover .story-card {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -15px rgba(5, 46, 35, 0.12);
+}
+
+.story-group:hover .story-card::before {
+  height: 60%;
+}
+
+/* For right-aligned cards, move the accent to the right side */
+.story-card-right::before {
+  left: auto;
+  right: 0;
+}
+
+/* --- Compact project cards: tilt perspective on hover --- */
+.card-tilt {
+  transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.card-tilt:hover {
+  transform: perspective(800px) rotateY(-2deg) rotateX(1deg) translateY(-4px);
+}
+
+.card-tilt img {
+  transition: transform 0.7s ease, filter 0.7s ease;
+  filter: saturate(0.85);
+}
+
+.card-tilt:hover img {
+  transform: scale(1.05);
+  filter: saturate(1.1);
+}
+
+/* --- Credential items: gentle float + subtle glow --- */
+.credential-item {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: default;
+}
+
+.credential-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px -8px rgba(164, 92, 64, 0.15);
+}
+
+/* --- Impact stat: number color pulse --- */
+.stat-item {
+  transition: transform 0.4s ease;
+}
+
+.stat-item:hover {
+  transform: translateX(6px);
+}
+
+.stat-item:hover .stat-number {
+  text-shadow: 0 0 30px rgba(164, 92, 64, 0.3);
+}
+
+/* --- Social icons: rotate + color shift --- */
+.social-link {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s, border-color 0.3s;
+}
+
+.social-link:hover {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+/* --- Footer links: slide right with opacity --- */
+.footer-link {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-link:hover {
+  transform: translateX(4px);
+  color: #fff;
+}
+
+/* --- Scroll-triggered fade-in (applied via JS) --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Organic shape subtle float --- */
+@keyframes organic-float {
+
+  0%,
+  100% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+
+  33% {
+    border-radius: 50% 50% 60% 40% / 45% 55% 50% 55%;
+  }
+
+  66% {
+    border-radius: 45% 55% 65% 35% / 50% 45% 55% 50%;
+  }
+}
+
+.organic-shape {
+  animation: organic-float 12s ease-in-out infinite;
+}
+
+/* --- Smooth scroll --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Mobile nav transitions --- */
+.mobile-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-panel {
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.mobile-panel.active {
+  transform: translateX(0);
+}
+
+/* --- Selection color --- */
+::selection {
+  background: #a45c40;
+  color: #fdfbf7;
+}
