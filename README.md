@@ -2,7 +2,9 @@
 
 A responsive static awareness website for **InAmigos Foundation**, showcasing the organization's mission, six flagship initiatives, social impact, and volunteer/donation avenues.
 
-🌐 **Live Website**: [https://in-amigos-foundation-nu.vercel.app/](https://in-amigos-foundation-nu.vercel.app/)
+**Live Website**: https://in-amigos-foundation-nu.vercel.app/
+
+**Github source code**: https://github.com/ShortEditor/InAmigos-foundation-
 
 ---
 
